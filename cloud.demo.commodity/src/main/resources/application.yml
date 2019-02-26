@@ -2,8 +2,8 @@
 # node 1
 spring:
   application:
-    name: comodity
-  profiles: comodity_node1
+    name: commodity
+  profiles: commodity_node1
 server:
   port: 11001
 eureka:
@@ -14,8 +14,8 @@ eureka:
 # node 2
 spring:
   application:
-    name: comodity
-  profiles: comodity_node2
+    name: commodity
+  profiles: commodity_node2
 server:
   port: 11002
 eureka:

@@ -2,23 +2,23 @@
 # node 1
 spring:
   application:
-    name: producer1
-  profiles: node1
+    name: order
+  profiles: order_node1
 server:
-  port: 11001
+  port: 12001
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:10001/eureka/
+      defaultZone: http://localhost:10001/eureka/,http://localhost:10002/eureka/
 ---
 # node 2
 spring:
   application:
-    name: producer1
-  profiles: node2
+    name: order
+  profiles: order_node2
 server:
-  port: 11002
+  port: 12002
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:10001/eureka/
+      defaultZone: http://localhost:10001/eureka/,http://localhost:10002/eureka/

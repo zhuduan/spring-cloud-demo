@@ -1,7 +1,5 @@
 package com.zhuduan.cloud.demo.order.controller;
 
-import cloud.demo.pojo.vo.CommodityDetailVO;
-import cloud.demo.pojo.vo.OrderDetailVO;
 import com.zhuduan.cloud.demo.order.feign.CommodityService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -25,14 +23,14 @@ public class DetailController {
     @Autowired
     private CommodityService commodityService;
 
-    @ApiOperation(httpMethod = "GET", value = "get the details by id", response = OrderDetailVO.class)
+//    @ApiOperation(httpMethod = "GET", value = "get the details by id", response = OrderDetailVO.class)
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public OrderDetailVO getDetail(@PathVariable Long id) {
-        OrderDetailVO orderDetailVO = new OrderDetailVO();
-        orderDetailVO.setId(id);
-        orderDetailVO.setName("name"+id);
-        orderDetailVO.setCommodityDetail(commodityService.getDetail(1L));
+    public String getDetail(@PathVariable Long id) {
+//        OrderDetailVO orderDetailVO = new OrderDetailVO();
+//        orderDetailVO.setId(id);
+//        orderDetailVO.setName("name"+id);
+//        orderDetailVO.setCommodityDetail(commodityService.getDetail(1L));
         
-        return orderDetailVO;
+        return "get " + commodityService.getDetail(1L);
     }
 }

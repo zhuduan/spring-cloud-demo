@@ -2,10 +2,10 @@
 # node 1
 spring:
   application:
-    name: producer1
-  profiles: node1
+    name: points
+  profiles: points_node1
 server:
-  port: 11001
+  port: 13001
 eureka:
   client:
     serviceUrl:
@@ -14,10 +14,10 @@ eureka:
 # node 2
 spring:
   application:
-    name: producer1
-  profiles: node2
+    name: points
+  profiles: points_node2
 server:
-  port: 11002
+  port: 13002
 eureka:
   client:
     serviceUrl:
