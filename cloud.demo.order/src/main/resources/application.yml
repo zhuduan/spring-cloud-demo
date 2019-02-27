@@ -10,6 +10,10 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:10001/eureka/,http://localhost:10002/eureka/
+feign:
+  hystrix:
+    enabled: true      
+
 ---
 # node 2
 spring:
@@ -22,3 +26,6 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:10001/eureka/,http://localhost:10002/eureka/
+feign:
+  hystrix:
+    enabled: true   
