@@ -5,7 +5,7 @@ spring:
     name: commodity
   profiles: commodity_node1
 server:
-  port: 11001
+  port: 21001
 eureka:
   client:
     serviceUrl:
@@ -17,7 +17,7 @@ spring:
     name: commodity
   profiles: commodity_node2
 server:
-  port: 11002
+  port: 21002
 eureka:
   client:
     serviceUrl:

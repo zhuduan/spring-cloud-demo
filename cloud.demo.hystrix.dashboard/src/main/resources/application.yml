@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: hystrix-dashboard
+  profiles: dashboard
+server:
+  port: 11001
+turbine:
+  appConfig: node01,node02
+  clusterNameExpression: new String("default")
+turbineaggregator:
+  clusterConfig: default
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10001/eureka/,http://localhost:10002/eureka/ 

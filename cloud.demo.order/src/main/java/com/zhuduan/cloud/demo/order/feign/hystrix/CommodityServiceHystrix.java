@@ -11,9 +11,9 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class CommodityServiceHystrix implements CommodityService {
-    
+
     @Override
     public String getDetail(Long id) {
-        return "fast fail for getting details";
+        return "fast fail";
     }
 }

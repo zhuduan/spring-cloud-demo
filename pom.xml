@@ -21,6 +21,7 @@
 		<module>cloud.demo.eureka</module>
 		<module>cloud.demo.order</module>
 		<module>cloud.demo.points</module>
+		<module>cloud.demo.hystrix.dashboard</module>
 	</modules>
 
 	<properties>

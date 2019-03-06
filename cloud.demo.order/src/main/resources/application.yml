@@ -1,3 +1,24 @@
+hystrix:
+  command:
+    default:
+      circuitBreaker:
+        enabled: true
+        requestVolumeThreshold: 5
+        sleepWindowInMilliseconds: 5000
+        errorThresholdPercentage: 50
+        forceOpen: false
+        forceClosed: false
+    orderGroup: 
+      circuitBreaker:
+        enabled: true
+        forceOpen: true
+  threadpool:
+    default:
+      coreSize: 5
+      maximumSize: 10
+      maxQueueSize: 10
+      queueSizeRejectionThreshold: 10
+
 ---
 # node 1
 spring:
@@ -5,11 +26,11 @@ spring:
     name: order
   profiles: order_node1
 server:
-  port: 12001
+  port: 22001
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:10001/eureka/,http://localhost:10002/eureka/
+      defaultZone: http://localhost:10001/eureka/
 feign:
   hystrix:
     enabled: true      
@@ -21,11 +42,11 @@ spring:
     name: order
   profiles: order_node2
 server:
-  port: 12002
+  port: 22002
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:10001/eureka/,http://localhost:10002/eureka/
+      defaultZone: http://localhost:10001/eureka/
 feign:
   hystrix:
     enabled: true   

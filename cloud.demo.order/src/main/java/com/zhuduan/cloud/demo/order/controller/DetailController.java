@@ -1,8 +1,8 @@
 package com.zhuduan.cloud.demo.order.controller;
 
 import com.zhuduan.cloud.demo.order.feign.CommodityService;
+import com.zhuduan.cloud.demo.order.service.OrderService;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,15 +22,18 @@ public class DetailController {
     
     @Autowired
     private CommodityService commodityService;
+    
+    @Autowired
+    private OrderService orderService;
 
 //    @ApiOperation(httpMethod = "GET", value = "get the details by id", response = OrderDetailVO.class)
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String getDetail(@PathVariable Long id) {
+    public String getDetail(@PathVariable Long id) throws Exception{
 //        OrderDetailVO orderDetailVO = new OrderDetailVO();
 //        orderDetailVO.setId(id);
 //        orderDetailVO.setName("name"+id);
 //        orderDetailVO.setCommodityDetail(commodityService.getDetail(1L));
         
-        return "get " + commodityService.getDetail(1L);
+        return "get commodity is " + commodityService.getDetail(1L) + " and order is " + orderService.getOrderInfo();
     }
 }
